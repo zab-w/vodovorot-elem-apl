@@ -204,7 +204,8 @@ actions.skyb_aoe+="/frost_shock,moving=1"
 # Cast Lightning Bolt in order to not waste Stormkeeper stacks
 actions.single_target="lightning_bolt,if=(buff.stormkeeper.remains<1.1*gcd*buff.stormkeeper.stack)"
 # Cast Frost Shock in order to not waste Icefury stacks
-actions.single_target+="/frost_shock,if=talent.icefury.enabled&buff.icefury.up&buff.icefury.remains<1.1*gcd*buff.icefury.stack"
+actions.single_target+="/lava_burst,if=buff.lava_surge.up&buff.icefury.up"
+actions.single_target+="/frost_shock,if=talent.icefury.enabled&buff.icefury.up&maelstrom<=92"
 # Get Flameshock ticking if it is not up
 actions.single_target+="/flame_shock,target_if=(!ticking|dot.flame_shock.remains<=gcd|talent.ascendance.enabled&dot.flame_shock.remains<(cooldown.ascendance.remains+buff.ascendance.duration)&cooldown.ascendance.remains<4)&(buff.lava_surge.up|!buff.bloodlust.up)"
 # Get all the Flame Shock up for PWave
